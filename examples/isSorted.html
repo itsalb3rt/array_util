@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /**
+    * Returns 1 if the array is sorted in ascending order, 
+    * -1 if it is sorted in descending order or 0 if it is not sorted.
+    **/
+    const isSorted = arr => {
+        let direction = -(arr[0] - arr[1]);
+        for (let [i, val] of arr.entries()) {
+            direction = !direction ? -(arr[i - 1] - arr[i]) : direction;
+            if (i === arr.length - 1) return !direction ? 0 : direction;
+            else if ((val - arr[i + 1]) * direction > 0) return 0;
+        }
+    };
+    let array1 = [0, 1, 2, 2];
+    let array2 =  [4, 3, 2];
+    let array3 = [4, 3, 5];
+    console.log(isSorted(array1)); // 1
+    console.log(isSorted(array2)); // -1
+    console.log(isSorted(array3)); // 0
+</script>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /**
+    * Returns an array of elements that appear in both arrays.
+    **/
+    const similarity = (arr, values) => arr.filter(v => values.includes(v));
+
+    let array1 = ['any', 'bar', 'foo'];
+    let array2 = ['foo', 'loremp', 'ipsu'];
+    let result = similarity(array1, array2);
+    console.log(result);
+</script>
+
+</html>

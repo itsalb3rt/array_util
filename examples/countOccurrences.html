@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /**
+    * cuenta la cantidad de coincidencias de algo dentro 
+    * de un arreglo, como un group by
+    **/
+
+    const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+    
+
+    let words = ['foo','bar','loremp','mesa','foo','foo','any','foo'];
+    let numbers = [1, 1, 2, 1, 2, 3];
+
+    console.log('words_count: ' + countOccurrences(words,'foo'));
+    console.log('number_count: ' + countOccurrences(numbers, 1));
+</script>
+
+</html>

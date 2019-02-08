@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /**
+    * Joins all elements of an array 
+    * into a string and returns this string. Uses a separator and an end separator.
+    **/
+    const join = (arr, separator = ',', end = separator) =>
+        arr.reduce(
+            (acc, val, i) =>
+                i === arr.length - 2
+                    ? acc + val + end
+                    : i === arr.length - 1
+                        ? acc + val
+                        : acc + val + separator,
+            ''
+        );
+
+    let array1 = ['pen', 'pineapple', 'apple', 'pen'];
+    let array2 = ['pen', 'pineapple', 'apple', 'pen'];
+    let array3 = ['pen', 'pineapple', 'apple', 'pen'];
+
+    console.log(join(array1, ',', '&')); // "pen,pineapple,apple&pen"
+    console.log(join(array2, ',')); // "pen,pineapple,apple,pen"
+    console.log(join(array3)); // "pen,pineapple,apple,pen"
+</script>
+
+</html>

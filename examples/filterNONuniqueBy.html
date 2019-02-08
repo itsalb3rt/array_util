@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const filterNonUniqueBy = (arr, fn) =>
+        arr.filter((v, i) => arr.every((x, j) => (i === j) === fn(v, x, i, j)));
+    let data = [
+        { id: 0, value: 'a' },
+        { id: 1, value: 'b' },
+        { id: 2, value: 'c' },
+        { id: 1, value: 'd' },
+        { id: 0, value: 'e' }
+    ];
+    console.log(filterNonUniqueBy(data, (a, b) => a.id == b.id));
+
+</script>
+
+</html>

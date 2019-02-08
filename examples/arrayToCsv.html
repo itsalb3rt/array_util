@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const arrayToCSV = (arr, delimiter = ',') =>
+        arr.map(v => v.map(x => `"${x}"`).join(delimiter)).join('\n');
+
+    console.log(arrayToCSV([['a', 'b'], ['c', 'd']])); // '"a","b"\n"c","d"'
+</script>
+
+</html>

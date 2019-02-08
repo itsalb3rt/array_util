@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const intersection = (a, b) => {
+        const s = new Set(b);
+        return a.filter(x => s.has(x));
+    };
+    let array1 = [1, 2, 3];
+    let array2 = [4, 3, 2];
+    console.log(intersection(array1,array2));
+</script>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const intersectionBy = (a, b, fn) => {
+        const s = new Set(b.map(fn));
+        return a.filter(x => s.has(fn(x)));
+    };
+    let array1 = [2.1, 1.2];
+    let array2 = [2.3, 3.4];
+    console.log(intersectionBy(array1,array2, Math.floor));
+</script>
+
+</html>
