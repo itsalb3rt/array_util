@@ -13,31 +13,40 @@ let util = new ArrayUtil();
 ```
 
 ### Metodos:
-- arrayToCSV
-- countOccurrences
-- filterNonUniqueBy
-- filterNonUnique
-- intersection
-- intersectionBy
-- isSorted
-- join
-- last
-- longestItem
-- reducedFilter
-- similarity
-- symmetricDifference
-- uniqueElements
-- uniqueElementsBy
+- [arrayToCSV](#array-to-csv)
+- [countOccurrences](#count-ccurrences)
+- [filterNonUniqueBy](#Occurrences)
+- [filterNonUnique](#filterNonUnique)
+- [intersection](#intersection)
+- [intersectionBy](#intersectionBy)
+- [isSorted](#isSorted)
+- [join](#join)
+- [last](#last)
+- [longestItem](#longestItem)
+- [reducedFilter](#reducedFilter)
+- [similarity](#similarity)
+- [symmetricDifference](#symmetricDifference)
+- [uniqueElements](#uniqueElements)
+- [uniqueElementsBy](#uniqueElementsBy)
 
 ### Ejemplos:
-**arrayToCSV**
+** <a name="array-to-csv">arrayToCSV</a>**
 ```javascript
 util.arrayToCSV([['a', 'b'], ['c', 'd']]);
 //out
 "a","b"
 "c","d"
 ```
-**filterNonUniqueBy**
+**<a name="Occurrences">Occurrences</a>**
+```javascript
+util.countOccurrences(['foo', 'bar', 'loremp', 'mesa', 'foo', 'foo', 'any', 'foo'], 'foo');
+util.countOccurrences([1, 1, 2, 1, 2, 3], 1);
+//out
+4
+3
+```
+
+**<a name="filterNonUniqueBy">filterNonUniqueBy</a>**
 
 ```javascript
 let data = [
@@ -51,7 +60,7 @@ util.filterNonUniqueBy(data, (a, b) => a.id == b.id);
 //out
 0: {id: 2, value: "c"};
 ```
-**filterNonUnique**
+**<a name="filterNonUnique">filterNonUnique</a>**
 ```javascript
 util.filterNonUnique([1, 1, 2, 1, 2, 3]);
 util.filterNonUnique(['foo', 'bar', 'loremp', 'mesa', 'foo', 'foo', 'any', 'foo']);
@@ -60,19 +69,19 @@ util.filterNonUnique(['foo', 'bar', 'loremp', 'mesa', 'foo', 'foo', 'any', 'foo'
  ["bar", "loremp", "mesa", "any"]
 ```
 
-**intersection**
+**<a name="intersection">intersection</a>**
 ```javascript
 util.intersection([1, 2, 3], [4, 3, 2]);
 //out
 [2, 3]
 ```
-**intersectionBy**
+**<a name="intersectionBy">intersectionBy</a>**
 ```javascript
 util.intersectionBy([1, 2, 3], [4, 3, 2], Math.floor);
 //out
 [2, 3]
 ```
-**isSorted**
+**<a name="isSorted">isSorted</a>**
 ```javascript
 util.isSorted([0, 1, 2, 2]); 
 util.isSorted([4, 3, 2]); 
@@ -82,7 +91,7 @@ util.isSorted([4, 3, 5]);
 -1 //desc
 0  //no sorted
 ```
-**join**
+**<a name="join">join</a>**
 ```javascript
 util.join(['pen', 'pineapple', 'apple', 'pen'], ',', '&');
 util.join(['pen', 'pineapple', 'apple', 'pen'], ','); 
@@ -92,13 +101,13 @@ pen,pineapple,apple&pen
 pen,pineapple,apple,pen
 pen,pineapple,apple,pen
 ```
-**last**
+**<a name="last">last</a>**
 ```javascript
 util.last(['foo', 'bar', 'loremp', 'mesa', 'foo', 'foo', 'any', 'foo']);
 //out
 foo
 ```
-**longestItem**
+**<a name="longestItem">longestItem</a>**
 ```javascript
 util.longestItem('this', 'is', 'a', 'testcase');
 util.longestItem(...['a', 'ab', 'abc']); 
@@ -113,7 +122,7 @@ testcase
 foobar
 ```
 
-**reducedFilter**
+**<a name="reducedFilter">reducedFilter</a>**
 ```javascript
 const data = [
   {
@@ -131,14 +140,14 @@ reducedFilter(data, ['id', 'name'], item => item.age > 24);
 //out
  [{ id: 2, name: 'giant'}]
 ```
-**similarity**
+**<a name="similarity">similarity</a>**
 ```javascript
 util.similarity(['any', 'bar', 'foo'], ['foo', 'loremp', 'ipsu']);
 //out
 ["foo"]
 ```
 
-**symmetricDifference**
+**<a name="symmetricDifference">symmetricDifference</a>**
 ```javascript
 util.symmetricDifference([1, 2, 3], [1, 2, 4]);
 util.symmetricDifference([1, 2, 2], [1, 3, 1]);
@@ -147,7 +156,7 @@ util.symmetricDifference([1, 2, 2], [1, 3, 1]);
 [2, 2, 3]
 ```
 
-**uniqueElements**
+**<a name="uniqueElements">uniqueElements</a>**
 ```javascript
 console.log(util.uniqueElements([1, 2, 2, 3, 4, 4, 5]));
 console.log(util.uniqueElements(['foo', 'bar', 'any', 'foo', 'foo']));
@@ -156,7 +165,7 @@ console.log(util.uniqueElements(['foo', 'bar', 'any', 'foo', 'foo']));
 ["foo", "bar", "any"]
 
 ```
-**uniqueElementsBy**
+**<a name="uniqueElementsBy">uniqueElementsBy</a>**
 ```javascript
 let array = [
             { id: 0, value: 'a' },
