@@ -36,39 +36,34 @@
 
         //filterNonUnique
         console.info('-- filterNonUnique');
-        console.log(util.filterNonUnique(numbers));
-        console.log(util.filterNonUnique(words));
+        console.log(util.filterNonUnique([1, 1, 2, 1, 2, 3]));
+        console.log(util.filterNonUnique(['foo', 'bar', 'loremp', 'mesa', 'foo', 'foo', 'any', 'foo']));
 
         //intersection
         console.info('-- intersection');
-        console.log(util.intersection(array1, array2));
+        console.log(util.intersection([1, 2, 3], [4, 3, 2]));
 
         //intersectionBy
         console.info('-- intersectionBy');
-        console.log(util.intersectionBy(array1, array2, Math.floor));
+        console.log(util.intersectionBy([1, 2, 3], [4, 3, 2], Math.floor));
+        
 
         //isSorted
         console.info('-- isSorted');
-        let sort1 = [0, 1, 2, 2];
-        let sort2 = [4, 3, 2];
-        let sort3 = [4, 3, 5];
-        console.log(util.isSorted(sort1)); // 1
-        console.log(util.isSorted(sort2)); // -1
-        console.log(util.isSorted(sort3)); // 0
+        console.log(util.isSorted([0, 1, 2, 2])); // 1
+        console.log(util.isSorted([4, 3, 2])); // -1
+        console.log(util.isSorted([4, 3, 5])); // 0
 
         //join
         console.info('-- join');
-        let words1 = ['pen', 'pineapple', 'apple', 'pen'];
-        let words2 = ['pen', 'pineapple', 'apple', 'pen'];
-        let words3 = ['pen', 'pineapple', 'apple', 'pen'];
 
-        console.log(util.join(words1, ',', '&')); // "pen,pineapple,apple&pen"
-        console.log(util.join(words2, ',')); // "pen,pineapple,apple,pen"
-        console.log(util.join(words3)); // "pen,pineapple,apple,pen"
+        console.log(util.join(['pen', 'pineapple', 'apple', 'pen'], ',', '&')); // "pen,pineapple,apple&pen"
+        console.log(util.join(['pen', 'pineapple', 'apple', 'pen'], ',')); // "pen,pineapple,apple,pen"
+        console.log(util.join(['pen', 'pineapple', 'apple', 'pen'])); // "pen,pineapple,apple,pen"
 
         //last
         console.info('-- last');
-        console.log(util.last(words1));
+        console.log(util.last(['foo', 'bar', 'loremp', 'mesa', 'foo', 'foo', 'any', 'foo']));
 
         //longestItem
         console.info('-- longestItem');
