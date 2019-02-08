@@ -313,7 +313,36 @@
             }
         ];
         let result = util.reducedFilter(userData, ['id', 'name', 'email'], item => item.id > 8);
-        console.log(result); 
+        console.log(result);
+
+        //similarity
+        console.log('-- similarity');
+        result = util.similarity(['any', 'bar', 'foo'], ['foo', 'loremp', 'ipsu']);
+        console.log(result);
+
+        //symmetricDifference
+        console.log('-- symmetricDifference');
+        console.log(util.symmetricDifference([1, 2, 3], [1, 2, 4])); // [3, 4]
+        console.log(util.symmetricDifference([1, 2, 2], [1, 3, 1])); // [2, 2, 3]
+
+        //uniqueElements
+        console.log('-- uniqueElements');
+        console.log(util.uniqueElements([1, 2, 2, 3, 4, 4, 5]));
+        console.log(util.uniqueElements(['foo', 'bar', 'any', 'foo', 'foo']));
+
+        //uniqueElementsBy
+        console.log('-- uniqueElementsBy');
+        let array = [
+            { id: 0, value: 'a' },
+            { id: 1, value: 'b' },
+            { id: 2, value: 'c' },
+            { id: 1, value: 'd' },
+            { id: 0, value: 'e' }
+        ];
+        result = util.uniqueElementsBy(array, (a, b) => a.id == b.id);
+        // [ { id: 0, value: 'a' }, { id: 1, value: 'b' }, { id: 2, value: 'c' } ]
+        console.log(result);
+
     </script>
 </head>
 

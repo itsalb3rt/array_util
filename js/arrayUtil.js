@@ -117,27 +117,27 @@ class ArrayUtil {
         return vals.reduce((a, x) => (x.length > a.length ? x : a));
     }
 
-   /**
-    * Filter an array of objects based on a 
-    * condition while also filtering out unspecified keys.
-    * const data = [
-        {
-            id: 1,
-            name: 'john',
-            age: 24
-        },
-        {
-            id: 2,
-            name: 'mike',
-            age: 50
-        }
-        ];
-
-        reducedFilter(data, ['id', 'name'], item => item.age > 24); // [{ id: 2, name: 'mike'}]
-    * @param {*} data 
-    * @param {*} keys 
-    * @param {*} fn 
-    */
+    /**
+     * Filter an array of objects based on a 
+     * condition while also filtering out unspecified keys.
+     * const data = [
+         {
+             id: 1,
+             name: 'john',
+             age: 24
+         },
+         {
+             id: 2,
+             name: 'mike',
+             age: 50
+         }
+         ];
+ 
+         reducedFilter(data, ['id', 'name'], item => item.age > 24); // [{ id: 2, name: 'mike'}]
+     * @param {*} data 
+     * @param {*} keys 
+     * @param {*} fn 
+     */
     reducedFilter(data, keys, fn) {
         return data.filter(fn).map(el =>
             keys.reduce((acc, key) => {
@@ -145,6 +145,53 @@ class ArrayUtil {
                 return acc;
             }, {})
         );
+    }
+
+    /**
+     * Returns an array of elements that appear in both arrays.
+     * 
+     * @param {*} arr 
+     * @param {*} values 
+     */
+    similarity(arr, values) {
+        return arr.filter(v => values.includes(v));
+    }
+
+    /**
+     * En teoría de conjuntos, la diferencia simétrica de dos 
+     * conjuntos es una operación que resulta en otro conjunto 
+     * cuyos elementos son aquellos que pertenecen a alguno de 
+     * los conjuntos iniciales, sin pertenecer a ambos a la vez
+     *
+     * Returns the symmetric difference between two arrays, without filtering out duplicate values.
+     * @param {*} a 
+     * @param {*} b 
+     */
+    symmetricDifference(a, b) {
+        const sA = new Set(a),
+            sB = new Set(b);
+        return [...a.filter(x => !sB.has(x)), ...b.filter(x => !sA.has(x))];
+    }
+
+    /**
+     * Return unique element in array, omit the duplicate values
+     * @param {*} arr 
+     */
+    uniqueElements(arr) {
+        return [...new Set(arr)];
+    }
+
+    /**
+     * Return unique array of unique element on array by 
+     * condition
+     * @param {*} arr 
+     * @param {*} fn 
+     */
+    uniqueElementsBy(arr, fn) {
+        return arr.reduce((acc, v) => {
+            if (!acc.some(x => fn(v, x))) acc.push(v);
+            return acc;
+        }, []);
     }
 
 }
