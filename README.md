@@ -30,7 +30,7 @@ let util = new ArrayUtil();
 - [uniqueElementsBy](#uniqueElementsBy)
 
 ### Ejemplos:
-** <a name="array-to-csv">arrayToCSV</a>**
+**<a name="array-to-csv">arrayToCSV</a>**
 ```javascript
 util.arrayToCSV([['a', 'b'], ['c', 'd']]);
 //out
