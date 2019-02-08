@@ -14,7 +14,7 @@ let util = new ArrayUtil();
 
 ### Metodos:
 - [arrayToCSV](#array-to-csv)
-- [countOccurrences](#count-ccurrences)
+- [countOccurrences](#countOccurrences)
 - [filterNonUniqueBy](#Occurrences)
 - [filterNonUnique](#filterNonUnique)
 - [intersection](#intersection)
@@ -37,7 +37,7 @@ util.arrayToCSV([['a', 'b'], ['c', 'd']]);
 "a","b"
 "c","d"
 ```
-**<a name="Occurrences">Occurrences</a>**
+**<a name="countOccurrences">countOccurrences</a>**
 ```javascript
 util.countOccurrences(['foo', 'bar', 'loremp', 'mesa', 'foo', 'foo', 'any', 'foo'], 'foo');
 util.countOccurrences([1, 1, 2, 1, 2, 3], 1);
@@ -158,8 +158,8 @@ util.symmetricDifference([1, 2, 2], [1, 3, 1]);
 
 **<a name="uniqueElements">uniqueElements</a>**
 ```javascript
-console.log(util.uniqueElements([1, 2, 2, 3, 4, 4, 5]));
-console.log(util.uniqueElements(['foo', 'bar', 'any', 'foo', 'foo']));
+util.uniqueElements([1, 2, 2, 3, 4, 4, 5]);
+util.uniqueElements(['foo', 'bar', 'any', 'foo', 'foo']);
 //out
 [1, 2, 3, 4, 5]
 ["foo", "bar", "any"]
